@@ -1,0 +1,35 @@
+﻿<html>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.min.js'></script>
+</head>
+<body>
+
+    <canvas id='myChart' style="margin-top:30px"></canvas>
+
+    <script>
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+               labels: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul','Ago','Sep', 'Oct', 'Nov', 'Dic'],
+                datasets: [{
+                     label: 'Walvers',
+                    data: [12, 19, 3, 17, 6, 3, 7, 22, 12, 10, 17, 18],
+                     backgroundColor:  "#3498db"
+                }]
+            },
+            options: {
+                animation: {
+                    onComplete: function () {
+                        window.JSREPORT_READY_TO_START = true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+
